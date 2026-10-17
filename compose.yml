@@ -1,0 +1,11 @@
+services:
+  media-service:
+    build:
+      context: ./services/media-service
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    env_file:
+      - ./services/media-service/.env
+    volumes:
+      - ~/.aws:/root/.aws:ro # redirected to ~/.aws to access AWS credentials
